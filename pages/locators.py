@@ -9,6 +9,8 @@ class LoginPageLocators:
     LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    USER_EMAIL_ADDRESS = (By.CSS_SELECTOR, "#login-username")
+    USER_PASSWORD = (By.CSS_SELECTOR, "#login-password")
 
 
 class ProductPageLocators(object):
@@ -29,3 +31,4 @@ class BasketPageLocators(object):
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
