@@ -9,8 +9,10 @@ class LoginPageLocators:
     LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
-    USER_EMAIL_ADDRESS = (By.CSS_SELECTOR, "#login-username")
-    USER_PASSWORD = (By.CSS_SELECTOR, "#login-password")
+    USER_EMAIL_ADDRESS = (By.CSS_SELECTOR, "#id_registration-email")
+    USER_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    USER_PASSWORD_1 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_BUTTON = (By.XPATH, '//button[@value="Register"]')
 
 
 class ProductPageLocators(object):

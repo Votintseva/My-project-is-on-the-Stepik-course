@@ -4,6 +4,7 @@ from .locators import MainPageLocators
 from .locators import LoginPageLocators
 from .locators import BasePageLocators
 from random_word import RandomWords
+import time
 
 
 class LoginPage(BasePage):
@@ -24,11 +25,14 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         assert self.browser.find_element(*LoginPageLocators.REGISTER_FORM), "Register form is not presented"
 
-    def register_new_user(self, email, password):
-        r = RandomWords()
-        self.email = r.get_random_word() + "@fakemail.org"
-        self.password = r.get_random_word() + "123"
-        email = browser.find_element(*LoginPageLocators.USER_EMAIL_ADDRESS, 'input')
-        email.send_keys(self.email)
-        password = browser.find_element(*LoginPageLocators.USER_PASSWORD, 'input')
-        password.ssend_keys(self.password)
+    def register_new_user(self):
+        self.email = (str(time.time()) + "@fakemail.org")
+        self.password = (str(time.time()) + "123")
+        email_adress = self.browser.find_element(*LoginPageLocators.USER_EMAIL_ADDRESS)
+        email_adress.send_keys(self.email)
+        reg_password = self.browser.find_element(*LoginPageLocators.USER_PASSWORD)
+        reg_password.send_keys(self.password)
+        reg_password_1 = self.browser.find_element(*LoginPageLocators.USER_PASSWORD_1)
+        reg_password_1.send_keys(self.password)
+        button = self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON)
+        button.click()
